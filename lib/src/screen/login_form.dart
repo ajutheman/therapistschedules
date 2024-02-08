@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:therapistschedules/src/screen/therapist_schedules_screens.dart';
 
+import '../bloc/auth/auth_bloc.dart';
+import '../bloc/auth/auth_state.dart';
 import '../bloc/auth_bloc.dart:.dart';
 // Import the therapist schedules screen
 
@@ -23,7 +25,10 @@ class LoginForm extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => TherapistSchedulesScreen()),
+                builder: (context) =>
+                    // senedules(),
+                    TherapistSchedulesScreen(),
+              ),
             );
           } else if (state is AuthFailure) {
             ScaffoldMessenger.of(context)
